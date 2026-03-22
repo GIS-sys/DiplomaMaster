@@ -2,7 +2,7 @@
 
 latexmk
 
-latexmk -c
+latexmk -C
 
 latexmk -pvc
 

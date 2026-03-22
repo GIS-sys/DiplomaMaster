@@ -1,0 +1,39 @@
+\documentclass{mipt-thesis-ms}
+% Следующие две строки нужны только для biblatex. Для inline-библиографии их следует убрать.
+\usepackage{mipt-thesis-biblatex}
+\addbibresource{main.bib}
+
+
+\title{Исследование и разработка метода обратного инжиниринга истории построения трёхмерных моделей на основе структурной сегментации и машинного обучения}
+\author{Егоров Г.\,А.}
+\supervisor{TODO TODO.\,TODO.}
+\referee{TODO TODO.\,TODO.}
+\groupnum{М05-412д}
+\faculty{Факультет прикладной математики и информатики}
+\department{Кафедра технологий программирования игр}
+\specialtynum{09.04.01}
+\specialtytext{Информатика и вычислительная техника}
+
+
+\begin{document}
+
+\mainmatter
+\pagestyle{miptthesis}
+\titlepage \newpage
+\include{frontback/annotation} \newpage
+\tableofcontents \newpage
+\include{frontback/intro}
+\include{frontback/definitions}
+
+\include{chapters/analysis}
+\include{chapters/design}
+\include{chapters/impl}
+
+\backmatter
+\include{frontback/conclusion}
+\include{appendices/A}
+\include{appendices/B}
+\include{appendices/C}
+\printbib
+
+\end{document}

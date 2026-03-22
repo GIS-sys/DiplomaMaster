@@ -1,3 +1,84 @@
-\chapternoindex{Приложение B}
+\chapter{Примеры работы модуля main.exe}
 
-TODO1
+В приложении приведены результаты обработки пяти типовых деталей. Для каждой детали указаны использованные операции, результаты классификации и визуализации сегментации.
+
+\section{Деталь 01}
+
+\begin{itemize}
+    \item \textbf{Операции:} bossExtrusion, cutExtrusion, fillet, fillet.
+    \item \textbf{Результат классификации:} fillet — 97.33\%.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/detail01_original.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail01_segmented.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail01_remaining.png}
+    \caption{Деталь 01: исходная модель, выделенные скругления, оставшаяся геометрия}
+    \label{fig:detail01}
+\end{figure}
+
+\section{Деталь 02}
+
+\begin{itemize}
+    \item \textbf{Операции:} bossExtrusion, fillet, fillet, cutExtrusion, fillet, fillet.
+    \item \textbf{Результат классификации:} cutExtrusion — 90.22\%, fillet — 99.65\%.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/detail02_original.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail02_segmented.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail02_remaining.png}
+    \caption{Деталь 02: исходная модель, выделенные вырезы, оставшаяся геометрия}
+    \label{fig:detail02}
+\end{figure}
+
+\section{Деталь 03}
+
+\begin{itemize}
+    \item \textbf{Операции:} bossExtrusion, chamfer, chamfer, chamfer, chamfer, fillet.
+    \item \textbf{Результат классификации:} chamfer — 84.60\%.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/detail03_original.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail03_segmented.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail03_remaining.png}
+    \caption{Деталь 03: исходная модель, выделенные фаски, оставшаяся геометрия}
+    \label{fig:detail03}
+\end{figure}
+
+\section{Деталь 04}
+
+\begin{itemize}
+    \item \textbf{Операции:} bossExtrusion, cutExtrusion, chamfer.
+    \item \textbf{Результат классификации:} bossExtrusion — 98.99\%, cutExtrusion — 99.34\%.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/detail04_original.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail04_segmented.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail04_remaining.png}
+    \caption{Деталь 04: исходная модель, выделенные выдавливания, оставшаяся геометрия}
+    \label{fig:detail04}
+\end{figure}
+
+\section{Деталь 05}
+
+\begin{itemize}
+    \item \textbf{Операции:} bossExtrusion, cutExtrusion, bossExtrusion, fillet, fillet, fillet.
+    \item \textbf{Результат классификации:} cutExtrusion — 99.97\%, fillet — 98.73\%.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/detail05_original.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail05_segmented.png}
+    \includegraphics[width=0.3\linewidth]{figures/detail05_remaining.png}
+    \caption{Деталь 05: исходная модель, выделенные вырезы, оставшаяся геометрия}
+    \label{fig:detail05}
+\end{figure}
+

@@ -21,6 +21,13 @@
 \pagestyle{miptthesis}
 \titlepage \newpage
 \include{frontback/annotation} \newpage
+\makeatletter
+\renewcommand{\tableofcontents}{%
+  \chapter*{\contentsname}%
+  \@mkboth{\contentsname}{\contentsname}%   <-- здесь задаётся текст для header
+  \@starttoc{toc}%
+}
+\makeatother
 \tableofcontents \newpage
 \include{frontback/intro}
 \include{frontback/definitions}

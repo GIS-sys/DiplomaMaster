@@ -1,10 +1,36 @@
 # Useful commands
 
-latexmk -C ; latexmk main.tex ; biber main ; latexmk main.tex; cp ./main.pdf /tmp/ ; xdg-open /tmp/main.pdf ; latexmk -C;
-
-latexmk
-
+```bash
+### 1. Полная очистка
 latexmk -C
+
+### 2. Первый проход (создаёт .aux и .toc с временными номерами)
+pdflatex -interaction=nonstopmode main.tex
+
+### 3. Второй проход (читает .toc, но номера могут быть ещё неверными)
+pdflatex -interaction=nonstopmode main.tex
+
+### 4. Третий проход (окончательно фиксирует номера страниц в оглавлении)
+pdflatex -interaction=nonstopmode main.tex
+
+### 5. Если есть библиография (biber)
+biber main
+
+### 6. Ещё два прохода pdflatex для подхвата ссылок и окончательной корректировки номеров
+pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
+
+### 7. Скопировать и отобразить
+cp main.pdf /tmp/main.pdf
+xdg-open /tmp/main.pdf
+
+### 8. Полная очистка
+latexmk -C
+```
+
+latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode main.tex; biber main; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=nonstopmode main.tex; cp main.pdf /tmp/main.pdf; xdg-open /tmp/main.pdf; latexmk -C;
+
+latexmk -C ; latexmk main.tex ; biber main ; latexmk main.tex; cp ./main.pdf /tmp/ ; xdg-open /tmp/main.pdf ; latexmk -C;
 
 latexmk -pvc
 

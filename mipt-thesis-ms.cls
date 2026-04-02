@@ -105,8 +105,12 @@
 
 \newcommand{\chapternoindex}[1]{
     \clearpage
-    \addcontentsline{toc}{chapter}
-           {\protect#1}
+    \typeout{\@chapapp\space\thechapter.}
+    \addcontentsline{toc}{chapter}{#1}
+
+    \chaptermark{#1}
+    \addtocontents{lof}{\protect\addvspace{10\p@}}
+    \addtocontents{lot}{\protect\addvspace{10\p@}}
 
     \@makechapterheadnoindex{#1}
     \thispagestyle{miptthesis}

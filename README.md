@@ -1,5 +1,7 @@
 # Useful commands
 
+latexmk -C ; latexmk main.tex ; biber main ; latexmk main.tex; cp ./main.pdf /tmp/ ; xdg-open /tmp/main.pdf ; latexmk -C;
+
 latexmk
 
 latexmk -C

@@ -37,6 +37,21 @@
 
 \backmatter
 \include{frontback/conclusion}
+% ---- Отключаем нумерацию секций внутри приложений ----
+\makeatletter
+\let\original@section\section
+\let\original@subsection\subsection
+
+\renewcommand{\section}[1]{%
+    \original@section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+}
+\renewcommand{\subsection}[1]{%
+    \original@subsection*{#1}%
+    \addcontentsline{toc}{subsection}{#1}%
+}
+\makeatother
+% -------------------------------------------------------
 \include{appendices/A}
 \include{appendices/B}
 \include{appendices/C}

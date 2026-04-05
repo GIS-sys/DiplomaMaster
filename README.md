@@ -2,15 +2,13 @@
 
 ## 0. My
 
-### 0.1 Fix TODOs in doploma
+### 0.1 Complete all TODOs in diploma, all META should be set to DONE
 
-### 0.2 Add block for comparing meshcnn and other neural netowrk types
+### 0.2 Ensure there is a block where explains why meshcnn was chosen, not some other neural network type
 
-### 0.3 Add info about why those 4 operations specifically
+### 0.3 Add chapter / section about why these 4 operations specifically (fillet, chamfer, ...)
 
 ### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix
-
-### 0.5 Rename semiautomatic into maual
 
 ### 0.6 Make sure section 1 includes information about "hybrid" approach
 

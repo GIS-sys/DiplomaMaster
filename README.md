@@ -10,11 +10,13 @@
 
 ### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix
 
-### 0.6 Make sure section 1 fully describes "hybrid" approach, how it works, why it's better
-
 ### 0.7 Add chapter / section to explain, how is it connected to the gaming industry
 
-### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure they link to a related content. Maybe add additional citations all over the text
+### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure they link to a related content. Maybe add additional citations all over the text. Maybe add "quotes" too
+
+### 0.10 Find out any deadlines / criteria for diploma from official representatives in my university
+
+### 0.11 Make it more human-like, not ai-like. Decrease amount of latex-style sugar (textit, textbf)
 
 ## Общий анализ
 

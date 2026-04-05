@@ -12,11 +12,11 @@
 
 ### 0.7 Add chapter / section to explain, how is it connected to the gaming industry
 
-### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure they link to a related content. Maybe add additional citations all over the text. Maybe add "quotes" too
+### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure the links are valid and they link to a related content, on trusted website. Maybe add additional citations all over the text. Maybe add "quotes" too
 
 ### 0.10 Find out any deadlines / criteria for diploma from official representatives in my university
 
-### 0.11 Make it more human-like, not ai-like. Decrease amount of latex-style sugar (textit, textbf)
+### 0.11 Make it more human-like, not ai-like. Decrease amount of latex-style sugar (textit, textbf). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
 
 ## Общий анализ
 

@@ -23,7 +23,7 @@
 \include{frontback/annotation} \newpage
 \makeatletter
 \renewcommand{\tableofcontents}{%
-  \chapter*{\contentsname}%
+  \chapternoindex{\contentsname}%
   \@mkboth{\contentsname}{\contentsname}%   <-- здесь задаётся текст для header
   \@starttoc{toc}%
 }

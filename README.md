@@ -4,7 +4,21 @@
 
 ### 0.1 Fix TODOs in doploma
 
-### 0.2 Compare meshcnn and others
+### 0.2 Add block for comparing meshcnn and other neural netowrk types
+
+### 0.3 Add info about why those 4 operations specifically
+
+### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix
+
+### 0.5 Rename semiautomatic into maual
+
+### 0.6 Make sure section 1 includes information about "hybrid" approach
+
+### 0.7 Connect to gaming
+
+### 0.8 Better citations
+
+### 0.9 Remove any mentions of Steps.txt and "2 states - before and after"
 
 ## Общий анализ
 

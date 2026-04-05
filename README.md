@@ -6,7 +6,7 @@
 
 ### 0.2 Ensure there is a block where explains why meshcnn was chosen, not some other neural network type
 
-### 0.3 Add chapter / section about why these 4 operations specifically (fillet, chamfer, ...)
+### 0.3 Add chapter / section about why these 4 operations specifically (fillet, chamfer, ...) - specifically, add info about statistics for amounts of each operation
 
 ### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix
 
@@ -16,7 +16,7 @@
 
 ### 0.10 Find out any deadlines / criteria for diploma from official representatives in my university
 
-### 0.11 Make it more human-like, not ai-like. Decrease amount of latex-style sugar (textit, textbf). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
+### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
 
 ## Общий анализ
 

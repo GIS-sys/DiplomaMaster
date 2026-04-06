@@ -77,20 +77,20 @@ cp datasets/generated/train/*.obj datasets/generated/test/
 
 Параметры:
 \begin{itemize}
-    \item \texttt{--task auto} – автоматический режим;
-    \item \texttt{--task segmentation --operation fillet} – сегментация для указанной операции;
-    \item \texttt{--task classification --operation chamfer} – классификация;
-    \item \texttt{-c} – кластеризация (оставить только крупнейший связный сегмент);
-    \item \texttt{--remove\_largest\_area 0.05} – удалить 5\% самых больших треугольников;
-    \item \texttt{-s} – сохранить визуализацию.
+    \item \texttt{--task auto} - автоматический режим;
+    \item \texttt{--task segmentation --operation fillet} - сегментация для указанной операции;
+    \item \texttt{--task classification --operation chamfer} - классификация;
+    \item \texttt{-c} - кластеризация (оставить только крупнейший связный сегмент);
+    \item \texttt{--remove\_largest\_area 0.05} - удалить 5\% самых больших треугольников;
+    \item \texttt{-s} - сохранить визуализацию.
 \end{itemize}
 
 \subsection{Результаты}
 
 В папке \texttt{target\_folder} создаются файлы:
 \begin{itemize}
-    \item \texttt{test\_0.stl} – выделенная геометрия для операции;
-    \item \texttt{meta.json} – тип операции и вероятность;
-    \item \texttt{test\_0.png} – визуализация (если указан флаг \texttt{-s}).
+    \item \texttt{test\_0.stl} - выделенная геометрия для операции;
+    \item \texttt{meta.json} - тип операции и вероятность;
+    \item \texttt{test\_0.png} - визуализация (если указан флаг \texttt{-s}).
 \end{itemize}
 

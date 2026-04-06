@@ -31,10 +31,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Set up correct formatting %%%%%
-\geometry{left=30mm}
-\geometry{right=20mm}
-\geometry{top=20mm}
-\geometry{bottom=20mm}
+\geometry{left=30mm, right=20mm, top=20mm, bottom=20mm, twoside=false}
 \onehalfspace
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

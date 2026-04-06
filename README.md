@@ -18,7 +18,7 @@
 
 ### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
 
-### Format tables properly, so no Overfull errors appear
+### Format tables properly, so no Overfull errors appear, all tables images should be with refereneces
 
 ## Общий анализ
 

@@ -22,9 +22,11 @@ latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=no
 
 ### 0.12 Format tables properly, so no Overfull errors appear, all tables images should be with refereneces
 
-### 0.13 Appendices - maybe delete completely, move info into regu
+### 0.13 Appendices - maybe delete completely, move info into regu. Appendix B - examples of models (impl/target_character). Appendix D - all of the code
 
 ### 0.14 Add time complexity analysis, time measurements on linux and windows and other machines
+
+### 0.16 Once again re-run it through the deepseek for any advice and errors and typos detection
 
 ## Общий анализ
 

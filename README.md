@@ -16,7 +16,7 @@ latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=no
 
 ### 0.10 Find out any deadlines / criteria for diploma from official representatives in my university
 
-### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
+### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf, texttt). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
 
 ### 0.12 Format tables properly, so no Overfull errors appear, all tables and images should be with refereneces, images should exist only those that are used
 

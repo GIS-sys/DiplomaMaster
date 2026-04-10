@@ -116,7 +116,7 @@ for current_dir, subdirs, files in os.walk(root):
         valid_folders.append(current_dir)
 
 print("=== СТАТИСТИКА ПО ДАТАСЕТУ ===")
-print(f"Всего папаок:                               {len(all_folders)}")
+print(f"Всего папок:                               {len(all_folders)}")
 print(f"Папок с несколькими JSON:                   {len(errors_multiplejson)}")
 print(f"Папок без JSON:                             {len(errors_nojson)}")
 print(f"Папок с разным числом STL и STEP:           {len(errors_diffstlstp)}")

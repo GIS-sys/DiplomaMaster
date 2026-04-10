@@ -6,6 +6,8 @@ latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=no
 
 # TODO
 
+add the experiment naming
+
 ## 0. My
 
 ### 0.1 Complete all TODOs in diploma, all META should be set to DONE

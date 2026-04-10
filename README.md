@@ -10,8 +10,6 @@ latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=no
 
 ### 0.1 Complete all TODOs in diploma, all META should be set to DONE
 
-### 0.3 Add chapter / section about why these 4 operations specifically (fillet, chamfer, ...) - specifically, add info about statistics for amounts of each operation
-
 ### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix
 
 ### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure the links are valid and they link to a related content, on trusted website. Maybe add additional citations all over the text. Maybe add "quotes" too
@@ -20,7 +18,7 @@ latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=no
 
 ### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
 
-### 0.12 Format tables properly, so no Overfull errors appear, all tables images should be with refereneces
+### 0.12 Format tables properly, so no Overfull errors appear, all tables and images should be with refereneces, images should exist only those that are used
 
 ### 0.13 Appendices - maybe delete completely, move info into regu. Appendix B - examples of models (impl/target_character). Appendix D - all of the code
 

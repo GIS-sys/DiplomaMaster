@@ -7,7 +7,6 @@ import json
 import os
 from collections import defaultdict, Counter
 
-# Путь к корню датасета
 DATASET_ROOT = "~/data/"
 TYPE = 1
 
@@ -27,9 +26,9 @@ def get_operations_from_steps(steps_path):
 
 
 def compute_statistics():
-    model_counts = Counter()           # сколько моделей содержат операцию
+    model_counts = Counter()
     total_models = 0
-    op_occurrences = defaultdict(list) # для каждого типа – список количества операций на модель
+    op_occurrences = defaultdict(list)
     
     for root, dirs, files in os.walk(DATASET_ROOT + ("old/" if TYPE == 0 else "new/")):
         if TYPE == 0:
@@ -62,7 +61,6 @@ def compute_statistics():
                 model_counts[op_type] += 1
                 op_occurrences[op_type].append(count)
     
-    # Вывод результатов
     print(f"Всего моделей после фильтрации: {total_models}\n")
     print("Операция, Моделей, Доля, Операций на модель")
     for op in op_occurrences.keys():
@@ -73,5 +71,57 @@ def compute_statistics():
 
 if __name__ == "__main__":
     compute_statistics()
+\end{verbatim}
+
+
+
+\section{Код для поиска статистики по очищенной выборке}
+
+\begin{verbatim}
+import os
+from pathlib import Path
+
+root = Path("~/data/")
+min_stl = 2
+
+all_folders = []
+errors_multiplejson = []   # папки с >1 JSON
+errors_nojson = []         # папки без JSON
+errors_diffstlstp = []     # кол-во STL != кол-во STEP
+errors_nostl = []          # нет STL файлов
+errors_stlfew = []         # STL меньше min_stl
+valid_folders = []         # папки, прошедшие все проверки
+
+for current_dir, subdirs, files in os.walk(root):
+    if subdirs:
+        continue
+
+    json_files = [f for f in files if f.endswith('.json')]
+    stl_files  = [f for f in files if f.endswith('.stl')]
+    stp_files  = [f for f in files if f.endswith('.stp')]
+
+    current_dir = str(current_dir)
+    all_folders.append(current_dir)
+    if len(json_files) > 1:
+        errors_multiplejson.append(current_dir)
+    elif len(json_files) == 0:
+        errors_nojson.append(current_dir)
+    elif len(stl_files) != len(stp_files):
+        errors_diffstlstp.append(current_dir)
+    elif len(stl_files) == 0:
+        errors_nostl.append(current_dir)
+    elif len(stl_files) < min_stl:
+        errors_stlfew.append(current_dir)
+    else:
+        valid_folders.append(current_dir)
+
+print("=== СТАТИСТИКА ПО ДАТАСЕТУ ===")
+print(f"Всего папаок:                               {len(all_folders)}")
+print(f"Папок с несколькими JSON:                   {len(errors_multiplejson)}")
+print(f"Папок без JSON:                             {len(errors_nojson)}")
+print(f"Папок с разным числом STL и STEP:           {len(errors_diffstlstp)}")
+print(f"Папок без STL:                              {len(errors_nostl)}")
+print(f"Папок с числом STL < {min_stl}:                     {len(errors_stlfew)}")
+print(f"Корректных папок (пригодных для обработки): {len(valid_folders)}")
 \end{verbatim}
 

@@ -6,12 +6,6 @@ latexmk -C; pdflatex -interaction=nonstopmode main.tex; pdflatex -interaction=no
 
 # TODO
 
-add the experiment naming
- add a script to launch ALL trainings and preprocessing at the same time
-add the IoU metric
-create datasets using no additional triangulation
-
-train for diploma (on regu, others are optional)
 train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ## 0. My
@@ -35,6 +29,19 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 ### 0.16 Once again re-run it through the deepseek for any advice and errors and typos detection
 
 ### 0.17 Analyze and understand how does MeshCNN work
+
+### 0.18 Change words "реверс инжиниринг" in any shape or form to "восстановление истории построения"
+
+### 0.19 Add info about acts, company, effectiveness and other in actuality chapter
+
+### 0.20 Adhere to GOST, in particular - change pages numbering to be at bottom center
+
+### 0.21 Add information aboit meshcnn that it only works or watertight models
+
+### 0.22 Add comparative table for different ways to train nn, f.e. different parameters. Discuss the problem with cutExtrusion or smth that we have to change the number of parameters, to better capture local/global structure
+
+### 0.23 Add both good and bad pictures to showcase how we change (old pictures vs new ones) and what we have to solve
+
 
 ## Общий анализ
 

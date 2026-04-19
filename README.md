@@ -30,8 +30,6 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.17 Analyze and understand how does MeshCNN work
 
-### 0.18 Change words "реверс инжиниринг" in any shape or form to "восстановление истории построения"
-
 ### 0.19 Add info about acts, company, effectiveness and other in actuality chapter
 
 ### 0.20 Adhere to GOST, in particular - change pages numbering to be at bottom center
@@ -119,7 +117,7 @@ Edge accuracy (доля верно классифицированных рёбе
 ## 4. Соответствие магистерскому диплому и итоговая оценка
 
 ### Положительные стороны (уровень магистра)
-- **Актуальная и сложная тема** – обратный инжиниринг истории построения.
+- **Актуальная и сложная тема** – восстановление истории построения.
 - **Глубокий обзор** нейросетевых архитектур (PointNet, DGCNN, MeshCNN) и форматов данных.
 - **Гибридный подход** с разделением ответственности – это научная новизна.
 - **Большой объём экспериментальных данных** (82 418 исходных, 21 464 после очистки).

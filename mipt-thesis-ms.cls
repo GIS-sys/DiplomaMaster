@@ -157,7 +157,8 @@
 %%%%%%%% Headings
 \fancypagestyle{miptthesis}{%
     \fancyhf{}
-    \fancyhead[RO, LE]{\thepage}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\footrulewidth}{0.4pt}
     \fancyhead[CO]{\leftmark}
     \fancyhead[CE]{\leftmark} %% \rightmark
 }

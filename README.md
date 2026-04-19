@@ -32,7 +32,7 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.19 Add info about acts, company, effectiveness and other in actuality chapter
 
-### 0.20 Adhere to GOST, in particular - change pages numbering to be at bottom center
+### 0.20 Adhere to GOST
 
 ### 0.21 Add information aboit meshcnn that it only works or watertight models
 

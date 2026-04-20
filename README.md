@@ -16,8 +16,6 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure the links are valid and they link to a related content, on trusted website. Maybe add additional citations all over the text. Maybe add "quotes" too
 
-### 0.10 Find out any deadlines / criteria for diploma from official representatives in my university
-
 ### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf, texttt). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.)
 
 ### 0.12 Format tables properly, so no Overfull errors appear, all tables and images should be with refereneces, images should exist only those that are used. Also regularize naming (рис / рисунок / ...)
@@ -37,6 +35,8 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 ### 0.22 Add comparative table for different ways to train nn, f.e. different parameters. Discuss the problem with cutExtrusion or smth that we have to change the number of parameters, to better capture local/global structure
 
 ### 0.23 Add both good and bad pictures to showcase how we change (old pictures vs new ones) and what we have to solve
+
+### 0.24 Change quotation marks to regular ones «», Check there are no – and —
 
 
 ## Общий анализ

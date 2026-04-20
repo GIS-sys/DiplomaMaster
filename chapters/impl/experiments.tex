@@ -7,7 +7,7 @@
 
 \begin{enumerate}
     \item \textbf{Обучение классификаторов} для каждой из четырёх операций на соответствующих подвыборках. Оценка - accuracy на тестовой выборке (10\% от датасета).
-    \item \textbf{Обучение сегментаторов} для каждой операции. Оценка - доля верно классифицированных рёбер (edge accuracy), доля моделей с accuracy >= 90\%, >=50\%, >=10\%, и метрика IoU.
+    \item \textbf{Обучение сегментаторов} для каждой операции. Оценка - доля верно классифицированных рёбер (edge accuracy, для каждого класса), доля моделей с accuracy >= 90\%, >=50\%, >=10\%, и метрика IoU для каждого класса на тестовой выборке (10\% от датасета).
     \item \textbf{Сравнение с baseline}: тривиальный классификатор, всегда предсказывающий доминирующий класс.
     \item \textbf{Тестирование на реальных деталях} из (TODO: proper appendix name)Приложения Б: визуальная оценка качества сегментации и успешность упрощения в КОМПАС-3D.
 \end{enumerate}
@@ -103,4 +103,208 @@ chamfer & 68.1\% & 53.1\% & TODO \\
 \end{figure}
 
 Интеграция с КОМПАС-3D позволила успешно упростить модели в автоматическом режиме для 8 из 10 тестовых случаев. Неудачи были связаны с чрезмерно сложной геометрией (>2000 треугольников) или отсутствием обученной операции (например, вращение).
+
+
+
+
+
+
+
+
+
+
+\subsection{Обучение независимых моделей по операциям}
+Для каждой из четырёх операций (\texttt{bossExtrusion}, \texttt{cutExtrusion}, \texttt{fillet}, \texttt{chamfer}) были обучены отдельные классификатор и сегментатор. Такой подход позволяет:
+\begin{itemize}
+    \item использовать специфичные для операции гиперпараметры (что, как будет показано далее, вполне практическое требование);
+    \item дообучать или заменять модель для одной операции, не затрагивая другие;
+    \item легко добавлять новые операции в будущем.
+\end{itemize}
+
+\subsubsection{Проведённые серии экспериментов}
+В ходе работы было выполнено несколько запусков для классификации и сегментации с различными архитектурными конфигурациями. Ниже перечислены основные комбинации гиперпараметров:
+
+\begin{itemize}
+    \item \textbf{Классификация, конфигурация A}: 
+        \begin{itemize}
+            \item \texttt{--ncf 32 32 64 64 128}
+            \item \texttt{--pool\_res 2400 2200 2000 1800 1600}
+            \item \texttt{--resblocks 3}
+        \end{itemize}
+        Результаты:
+        \begin{itemize}
+            \item \texttt{}
+            \item \texttt{}
+            \item \texttt{}
+        \end{itemize}
+    \item \textbf{Классификация, конфигурация B}: 
+        \begin{itemize}
+            \item \texttt{--ncf 32 64 128}
+            \item \texttt{--pool\_res 2400 1800 1200}
+            \item \texttt{--resblocks 1}
+        \end{itemize}
+    \item \textbf{Сегментация, конфигурация C}: 
+        \begin{itemize}
+            \item \texttt{--ncf 32 32 64 64 128 128}
+            \item \texttt{--pool\_res 2400 2200 2000 1800 1600}
+            \item \texttt{--resblocks 3}
+        \end{itemize}
+        Результаты:
+          cutExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.854}
+                \item \texttt{Accuracy (выбранная операция): 0.758}
+                \item \texttt{Accuracy (остальные операции): 0.883}
+                \item \texttt{IoU (выбранная операция): 0.547}
+                \item \texttt{IoU (остальные операции): 0.820}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.957}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.551}
+            \end{itemize}
+          fillet:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.895}
+                \item \texttt{Accuracy (выбранная операция): 0.917}
+                \item \texttt{Accuracy (остальные операции): 0.886}
+                \item \texttt{IoU (выбранная операция): 0.716}
+                \item \texttt{IoU (остальные операции): 0.856}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.609}
+            \end{itemize}
+          chamfer:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.959}
+                \item \texttt{Accuracy (выбранная операция): 0.941}
+                \item \texttt{Accuracy (остальные операции): 0.964}
+                \item \texttt{IoU (выбранная операция): 0.824}
+                \item \texttt{IoU (остальные операции): 0.946}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.993}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.869}
+            \end{itemize}
+          bossExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.724}
+                \item \texttt{Accuracy (выбранная операция): 0.679}
+                \item \texttt{Accuracy (остальные операции): 0.743}
+                \item \texttt{IoU (выбранная операция): 0.416}
+                \item \texttt{IoU (остальные операции): 0.659}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.880}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.150}
+            \end{itemize}
+    \item \textbf{Сегментация, конфигурация D}: 
+        \begin{itemize}
+            \item \texttt{--ncf 32 32 64 64 128}
+            \item \texttt{--pool\_res 2400 1800 1200 600}
+            \item \texttt{--resblocks 1}
+        \end{itemize}
+        Результаты:
+          cutExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.852}
+                \item \texttt{Accuracy (выбранная операция): 0.769}
+                \item \texttt{Accuracy (остальные операции): 0.878}
+                \item \texttt{IoU (выбранная операция): 0.542}
+                \item \texttt{IoU (остальные операции): 0.818}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.964}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.528}
+            \end{itemize}
+          fillet:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.934}
+                \item \texttt{Accuracy (выбранная операция): 0.929}
+                \item \texttt{Accuracy (остальные операции): 0.937}
+                \item \texttt{IoU (выбранная операция): 0.807}
+                \item \texttt{IoU (остальные операции): 0.904}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.794}
+            \end{itemize}
+          chamfer:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.962}
+                \item \texttt{Accuracy (выбранная операция): 0.929}
+                \item \texttt{Accuracy (остальные операции): 0.970}
+                \item \texttt{IoU (выбранная операция): 0.840}
+                \item \texttt{IoU (остальные операции): 0.948}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.993}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.883}
+            \end{itemize}
+          bossExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.744}
+                \item \texttt{Accuracy (выбранная операция): 0.748}
+                \item \texttt{Accuracy (остальные операции): 0.742}
+                \item \texttt{IoU (выбранная операция): 0.458}
+                \item \texttt{IoU (остальные операции): 0.676}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.910}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.248}
+            \end{itemize}
+    \item \textbf{Сегментация, конфигурация E}: 
+        \begin{itemize}
+            \item \texttt{--ncf 32 64 64 128}
+            \item \texttt{--pool\_res 2400 1800 1200}
+            \item \texttt{--resblocks 1}
+        \end{itemize}
+        Результаты:
+          cutExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.851}
+                \item \texttt{Accuracy (выбранная операция): 0.749}
+                \item \texttt{Accuracy (остальные операции): 0.882}
+                \item \texttt{IoU (выбранная операция): 0.533}
+                \item \texttt{IoU (остальные операции): 0.817}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.964}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.528}
+            \end{itemize}
+          fillet:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.941}
+                \item \texttt{Accuracy (выбранная операция): 0.934}
+                \item \texttt{Accuracy (остальные операции): 0.944}
+                \item \texttt{IoU (выбранная операция): 0.830}
+                \item \texttt{IoU (остальные операции): 0.918}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.837}
+            \end{itemize}
+          chamfer:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.963}
+                \item \texttt{Accuracy (выбранная операция): 0.942}
+                \item \texttt{Accuracy (остальные операции): 0.968}
+                \item \texttt{IoU (выбранная операция): 0.836}
+                \item \texttt{IoU (остальные операции): 0.949}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.993}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.883}
+            \end{itemize}
+          bossExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.710}
+                \item \texttt{Accuracy (выбранная операция): 0.739}
+                \item \texttt{Accuracy (остальные операции): 0.699}
+                \item \texttt{IoU (выбранная операция): 0.423}
+                \item \texttt{IoU (остальные операции): 0.635}
+                \item \texttt{Amount where (accuracy >= 10\%): 1.0}
+                \item \texttt{Amount where (accuracy >= 50\%): 0.827}
+                \item \texttt{Amount where (accuracy >= 90\%): 0.165}
+            \end{itemize}
+\end{itemize}
+
+Каждая конфигурация обучалась на одних и тех же наборах данных (по операциям) не менее трёх раз со случайными начальными весами. В качестве итоговой бралась модель, показавшая наилучшую точность на валидационной выборке. Сравнение результатов по этим конфигурациям позволило выбрать оптимальную архитектуру для каждой операции: ....
+
+\subsection{Обучение независимых моделей по операциям}
+Для каждой из четырёх операций (\texttt{bossExtrusion}, \texttt{cutExtrusion}, \texttt{fillet}, \texttt{chamfer}) были обучены отдельные классификатор и сегментатор. Такой подход позволяет:
+\begin{itemize}
+    \item использовать специфичные для операции гиперпараметры;
+    \item дообучать или заменять модель для одной операции, не затрагивая другие;
+    \item легко добавлять новые операции в будущем.
+\end{itemize}
 

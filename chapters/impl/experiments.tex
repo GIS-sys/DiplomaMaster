@@ -132,17 +132,52 @@ chamfer & 68.1\% & 53.1\% & TODO \\
             \item \texttt{--resblocks 3}
         \end{itemize}
         Результаты:
-        \begin{itemize}
-            \item \texttt{}
-            \item \texttt{}
-            \item \texttt{}
-        \end{itemize}
+          cutExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.789}
+                \item \texttt{Accuracy (выбранная операция): 0.714}
+                \item \texttt{Accuracy (остальные операции): 0.773}
+            \end{itemize}
+          fillet:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.754}
+                \item \texttt{Accuracy (выбранная операция): 0.743}
+                \item \texttt{Accuracy (остальные операции): 0.670}
+            \end{itemize}
+          chamfer:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.865}
+                \item \texttt{Accuracy (выбранная операция): 0.874}
+                \item \texttt{Accuracy (остальные операции): 0.756}
+            \end{itemize}
+          bossExtrusion:
+            Отсутствует: все операции содержали bossExtrusion
     \item \textbf{Классификация, конфигурация B}: 
         \begin{itemize}
             \item \texttt{--ncf 32 64 128}
             \item \texttt{--pool\_res 2400 1800 1200}
             \item \texttt{--resblocks 1}
         \end{itemize}
+          cutExtrusion:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.819}
+                \item \texttt{Accuracy (выбранная операция): 0.766}
+                \item \texttt{Accuracy (остальные операции): 0.778}
+            \end{itemize}
+          fillet:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.723}
+                \item \texttt{Accuracy (выбранная операция): 0.752}
+                \item \texttt{Accuracy (остальные операции): 0.602}
+            \end{itemize}
+          chamfer:
+            \begin{itemize}
+                \item \texttt{Accuracy (общая): 0.882}
+                \item \texttt{Accuracy (выбранная операция): 0.881}
+                \item \texttt{Accuracy (остальные операции): 0.782}
+            \end{itemize}
+          bossExtrusion:
+            Отсутствует: все операции содержали bossExtrusion
     \item \textbf{Сегментация, конфигурация C}: 
         \begin{itemize}
             \item \texttt{--ncf 32 32 64 64 128 128}

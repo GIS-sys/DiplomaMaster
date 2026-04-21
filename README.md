@@ -12,7 +12,7 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.1 Complete all TODOs in diploma, all META should be set to DONE
 
-### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix (check every5thing for proper appendix names)
+### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix (check every5thing for proper appendix names). B D E should stay, A delete, C to main text
 
 ### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure the links are valid and they link to a related content, on trusted website. Maybe add additional citations all over the text. Maybe add "quotes" too
 

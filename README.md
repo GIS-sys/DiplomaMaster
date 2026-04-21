@@ -12,7 +12,7 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.1 Complete all TODOs in diploma, all META should be set to DONE
 
-### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix
+### 0.4 Measure accuracies and other metrics for different trainings (class acc, seg IoU, seg accuracy, seg acc90 etc), including train and test, and plots; also how many models in each and what parameters were used, all in appendix (check every5thing for proper appendix names)
 
 ### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure the links are valid and they link to a related content, on trusted website. Maybe add additional citations all over the text. Maybe add "quotes" too
 
@@ -38,6 +38,69 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.24 Change quotation marks to regular ones «», Check there are no – and —
 
+### 0.25 Train all classificaitons for 50 epochs
+
+### 0.26 Add dataset sizes in experiments.tex
+
+### 0.27 Add images (maybe in analysis) for examples of chamfer / fillet / cut / boss
+
+## Images locations
+```
+analysis/neural_3d:
+ meshcnn_arch.png
+impl/architecture_evolution:
+ naive_pointcloud_architecture.png
+ naive_modular_architecture.png
+impl/inference_postprocess:
+ inference_pipeline.png
+impl/experiments:
+ plot_cls_b_acc.png
+ plot_cls_b_loss.png
+
+image2.png
+image3.png
+image.png
+scheme_general.png
+scheme_mode_auto.png
+scheme_mode_manual.png
+plot_cls_a_acc.png
+plot_cls_a_loss.png
+plot_cls_a_acc_positive.png
+plot_cls_a_acc_negative.png
+plot_cls_b_acc_positive.png
+plot_cls_b_acc_negative.png
+```
+
+## Tables location
+
+```
+analysis/formats_3d:
+ \caption{Сравнение форматов хранения 3D моделей}
+ \label{tab:cmp-3d-format}
+analysis/neural_3d:
+ \caption{Сравнительный анализ архитектур для задачи сегментации CAD-операций}
+ \label{tab:cmp-3d-neural}
+impl/target_character:
+ \caption{Распределение операций в исходном датасете}
+ \label{tab:ops-stats-raw}
+ \caption{Распределение операций в рабочем датасете}
+ \label{tab:ops-stats-filter}
+impl/architecture_evolution:
+ \caption{Сравнение подходов к реализации}
+ \label{tab:approach-comparison}
+impl/data_pipeline:
+ \caption{Статистика подготовки данных}
+ \label{tab:data-stats}
+imple/experiments:
+ \caption{Сравнение конфигураций классификатора (accuracy на тесте: общая, для положительного класса, для отрицательного класса)}
+ \label{tab:cls-comparison}
+ \caption{Сравнение конфигураций сегментатора (метрики на тестовой выборке)}
+ \label{tab:seg-comparison}
+```
+
+
+
+TODO
 
 ## Общий анализ
 

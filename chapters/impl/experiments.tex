@@ -163,16 +163,22 @@ TODO ALL BELOW
 
 
 \subsection{Тестирование на реальных деталях}
-Модуль был протестирован на пяти типовых деталях из Приложения Г. Во всех случаях удалось выделить геометрию, соответствующую заданной операции, с визуально приемлемой точностью. Пример работы для детали «Деталь 01» показан на рисунке \ref{fig:real-part}.
+Модуль был протестирован на пяти типовых деталях из Приложения Г. Во всех случаях удалось выделить геометрию, соответствующую заданной операции, с визуально приемлемой точностью. Пример работы для детали «Деталь 01» показан на рисунке \ref{fig:part-01}.
 
 \begin{figure}[h]
     \centering
     % TODO: Вставить скриншоты из Приложения Б (исходная модель, обнаруженная часть, оставшаяся часть)
-    \includegraphics[width=0.3\linewidth]{TODO_part01_original.png}
-    \includegraphics[width=0.3\linewidth]{TODO_part01_detected.png}
-    \includegraphics[width=0.3\linewidth]{TODO_part01_remaining.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_original.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_fillet_detected.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_fillet_remaining.png} \\
+    \includegraphics[width=0.3\linewidth]{figures/part_01_cutextrusion_detected.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_cutextrusion_remaining.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_chamfer_detected.png} \\
+    \includegraphics[width=0.3\linewidth]{figures/part_01_chamfer_remaining.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_bossextrusion_detected.png}
+    \includegraphics[width=0.3\linewidth]{figures/part_01_bossextrusion_remaining.png}
     \caption{Пример работы модуля на детали «Деталь 01»: исходная модель, обнаруженная часть (fillet), оставшаяся геометрия}
-    \label{fig:real-part}
+    \label{fig:part-01}
 \end{figure}
 
 Интеграция с КОМПАС-3D позволила успешно упростить модели в автоматическом режиме для 8 из 10 тестовых случаев. Неудачи были связаны с чрезмерно сложной геометрией (более 2000 треугольников) либо с наличием операций, не включённых в обучение (например, вращение).

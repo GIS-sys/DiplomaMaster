@@ -114,6 +114,20 @@
     \@afterheading
 }
 
+\newcommand{\chapternoindexcenter}[1]{
+    \clearpage
+    \typeout{\@chapapp\space\thechapter.}
+    \addcontentsline{toc}{chapter}{#1}
+
+    \chaptermark{#1}
+    \addtocontents{lof}{\protect\addvspace{10\p@}}
+    \addtocontents{lot}{\protect\addvspace{10\p@}}
+
+    \@makechapterheadnoindexcenter{#1}
+    \thispagestyle{miptthesis}
+    \@afterheading
+}
+
 \def\@makechapterhead#1{%
   \vspace*{50\p@}%
   {\parindent \z@ \raggedright \normalfont
@@ -129,6 +143,14 @@
   {\parindent \z@ \raggedright \normalfont
     \interlinepenalty\@M
     \LARGE \bfseries\boldmath #1\par\nobreak
+    \vskip 40\p@
+  }
+}
+\def\@makechapterheadnoindexcenter#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \large \bfseries\boldmath \center #1\par\nobreak
     \vskip 40\p@
   }
 }

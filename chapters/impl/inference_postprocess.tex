@@ -13,7 +13,7 @@
     \item \textbf{Передача в КОМПАС-3D}: результаты (meta.json и test\_0.stl) передаются в CAD-среду для верификации и упрощения модели.
 \end{enumerate}
 
-\subsection{Режимы работы main.exe}
+\subsection{Режимы работы инференса}
 Модуль поддерживает два режима, задаваемые параметром \texttt{--task}:
 
 \begin{itemize}
@@ -33,12 +33,12 @@
 Дополнительно создаётся файл \texttt{meta.json}, содержащий для автоматического режима имя выбранной операции и её вероятность, или результаты классификации в общем случае.
 
 \subsection{Схема работы}
-Схема работы инференса представлена на рисунке ~\ref{fig:inference-pipeline}.
+Схема работы инференса представлена на рисунке ~\ref{fig:inference-pipeline}. Более подробная информация о работе инференса представлена в Приложении В.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/inference_pipeline.png}
-    \caption{Схема работы исполняемого модуля main.exe}
+    \caption{Схема работы исполняемого модуля}
     \label{fig:inference-pipeline}
 \end{figure}
 

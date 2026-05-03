@@ -20,15 +20,11 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.12 Format tables properly, so no Overfull errors appear, all tables and images should be with refereneces, images should exist only those that are used. Also regularize naming (рис / рисунок / ...)
 
-### 0.13 Appendices - B D E should stay, A delete, C to main text
-
 ### 0.14 Add time complexity analysis, time measurements on linux and windows and other machines
 
 ### 0.16 Once again re-run it through the deepseek for any advice and errors and typos detection
 
-### 0.17 Analyze and understand how does MeshCNN work
-
-### 0.20 Adhere to GOST
+### 0.20 Adhere to GOST (in particular, format appendices 6.17)
 
 ### 0.21 Add information aboit meshcnn that it only works or watertight models
 
@@ -56,15 +52,35 @@ impl/inference_postprocess:
 impl/experiments:
  plot_cls_b_acc.png
  plot_cls_b_loss.png
+ plot_seg_d_acc_1.png
+ plot_seg_d_loss.png
+appendices/3:
+ scheme_general.png
+ scheme_mode_auto.png
+ scheme_mode_manual.png
 
 image2.png
 image3.png
 image.png
-scheme_general.png
-scheme_mode_auto.png
-scheme_mode_manual.png
 plot_cls_a_acc.png
+plot_cls_a_acc_negative.png
+plot_cls_a_acc_positive.png
 plot_cls_a_loss.png
+plot_cls_b_acc_negative.png
+plot_cls_b_acc_positive.png
+plot_seg_c_acc_1.png
+plot_seg_c_acc_more_50.png
+plot_seg_c_acc_more_90.png
+plot_seg_c_iou_1.png
+plot_seg_c_loss.png
+plot_seg_d_acc_more_50.png
+plot_seg_d_acc_more_90.png
+plot_seg_d_iou_1.png
+plot_seg_e_acc_1.png
+plot_seg_e_acc_more_50.png
+plot_seg_e_acc_more_90.png
+plot_seg_e_iou_1.png
+plot_seg_e_loss.png
 plot_cls_a_acc_positive.png
 plot_cls_a_acc_negative.png
 plot_cls_b_acc_positive.png
@@ -106,12 +122,15 @@ TODO
 Приложил:
 - pdf файл моего магистерского диплома
 - лог компиляции этого pdf из latex
+- pdf ГОСТ для данной работы
 
 Посмотри, пожалуйста
 1) есть ли какие-то проблемы с оглавлением и структурой работы?
 2) есть ли какие-то фактические / семантические / логические ошибки?
 3) что бы ты изменил, добавил или удалил в работе?
 4) соответствует ли в целом работа магистерскому диплому, по формату и содержанию? Дай оценку итоговую
+5) соответствует ли работа ГОСТ?
+6) есть ли проблемы при компиляции pdf из latex?
 
 Отвечай очень развёрнуто и подробно, не бойся показывать 30-40 пунктов проблемных для каждого вопроса, если ты вдруг увидишь столько. Но вначале подумай хорошо, и отвечай только когда подумаешь подробно!
 

@@ -4,10 +4,10 @@
 \addbibresource{main.bib}
 
 
-\title{Исследование и разработка метода обратного инжиниринга истории построения трёхмерных моделей на основе структурной сегментации и машинного обучения}
-\author{Егоров Г.\,А.}
-\supervisor{TODO TODO.\,TODO.}
-\referee{TODO TODO.\,TODO.}
+\title{Исследование и разработка метода восстановления истории построения трёхмерных моделей на основе структурной сегментации и машинного обучения}
+\author{Егоров Г. А.}
+\supervisor{Протасов А. А.}
+\referee{Завадский Н. П.}
 \groupnum{М05-412д}
 \faculty{Факультет прикладной математики и информатики}
 \department{Кафедра технологий программирования игр}
@@ -23,11 +23,12 @@
 \include{frontback/annotation} \newpage
 \makeatletter
 \renewcommand{\tableofcontents}{%
-  \chapter*{\contentsname}%
+  \chapternoindex{\contentsname}%
   \@mkboth{\contentsname}{\contentsname}%   <-- здесь задаётся текст для header
   \@starttoc{toc}%
 }
 \makeatother
+\setcounter{tocdepth}{1}
 \tableofcontents \newpage
 \include{frontback/intro}
 \include{frontback/definitions}
@@ -37,9 +38,26 @@
 
 \backmatter
 \include{frontback/conclusion}
-\include{appendices/A}
-\include{appendices/B}
-\include{appendices/C}
+% ---- Отключаем нумерацию секций внутри приложений ----
+\makeatletter
+\let\original@section\section
+\let\original@subsection\subsection
+
+\renewcommand{\section}[1]{%
+    \original@section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+}
+\renewcommand{\subsection}[1]{%
+    \original@subsection*{#1}%
+    \addcontentsline{toc}{subsection}{#1}%
+}
+\makeatother
+% -------------------------------------------------------
 \printbib
+\include{appendices/1}
+\include{appendices/2}
+\include{appendices/3}
+\include{appendices/4}
+\include{appendices/5}
 
 \end{document}

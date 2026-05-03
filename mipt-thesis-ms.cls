@@ -31,10 +31,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Set up correct formatting %%%%%
-\geometry{left=30mm}
-\geometry{right=20mm}
-\geometry{top=20mm}
-\geometry{bottom=20mm}
+\geometry{left=30mm, right=20mm, top=20mm, bottom=20mm, twoside=false}
 \onehalfspace
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -117,6 +114,26 @@
     \@afterheading
 }
 
+\newcommand{\chapterappendix}[2]{
+    \clearpage
+    \typeout{\@chapapp\space\thechapter.}
+    \addcontentsline{toc}{chapter}{#1 #2}
+
+    \chaptermark{#1 #2}
+    \addtocontents{lof}{\protect\addvspace{10\p@}}
+    \addtocontents{lot}{\protect\addvspace{10\p@}}
+
+    \@makechapterheadnoindexcenter{#1 #2}
+    \thispagestyle{miptthesis}
+    \@afterheading
+
+    % Правильная нумерация таблиц и картинок с нуля
+    \setcounter{table}{0}
+    \setcounter{figure}{0}
+    \renewcommand{\thetable}{#2.\arabic{table}}
+    \renewcommand{\thefigure}{#2.\arabic{figure}}
+}
+
 \def\@makechapterhead#1{%
   \vspace*{50\p@}%
   {\parindent \z@ \raggedright \normalfont
@@ -135,6 +152,14 @@
     \vskip 40\p@
   }
 }
+\def\@makechapterheadnoindexcenter#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \large \bfseries\boldmath \center #1\par\nobreak
+    \vskip 40\p@
+  }
+}
 
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
@@ -144,6 +169,7 @@
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {1.5ex \@plus .2ex}%
                              {\normalfont\large\raggedright}}
+
 %%%%%%%% Captions %%%%%%%%%%%%%%%%%%%%%%%%%%
 \long\def\@makecaption#1#2{%
   \vskip\abovecaptionskip
@@ -159,7 +185,8 @@
 %%%%%%%% Headings
 \fancypagestyle{miptthesis}{%
     \fancyhf{}
-    \fancyhead[RO, LE]{\thepage}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\footrulewidth}{0.4pt}
     \fancyhead[CO]{\leftmark}
     \fancyhead[CE]{\leftmark} %% \rightmark
 }

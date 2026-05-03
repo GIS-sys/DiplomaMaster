@@ -1,4 +1,4 @@
-% META: NONE.1
+% META: DONE.1
 
 \chapterappendix{ПРИЛОЖЕНИЕ}{Д}
 
@@ -6,14 +6,76 @@
 {\fontseries{sb}\selectfont Графики обучения нейронных сетей}
 \end{center}
 
-\subsection{X}
+\subsection{Классификация, конфигурация А}
 
-\begin{figure}[v]
+На рисунке \ref{fig:app5-plot-cls-a} представлены все основные графики, полученные в результате обучения нейронной сети в режиме классификации в конфигурации A.
+
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.3\linewidth]{figures/detail01_original.png}
-    \includegraphics[width=0.3\linewidth]{figures/detail01_segmented.png}
-    \includegraphics[width=0.3\linewidth]{figures/detail01_remaining.png}
-    \caption{Деталь 01: исходная модель, выделенные скругления, оставшаяся геометрия}
-    \label{fig:detail01qwe}
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_a_acc.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_a_acc_negative.png} \\
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_a_acc_positive.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_a_loss.png}
+    \caption{Точность предсказания на тестовой выборке (слева сверху), точность предсказания всех операций кроме выбранной (справа сверху), точность предсказания выбранной операции (слева снизу) и функция потерь на обучении (справа снизу) для операций cutExtrusion (фиолетовый), fillet (зелёный), chamfer (оранжевый), конфигурация A}
+    \label{fig:app5-plot-cls-a}
+\end{figure}
+
+\subsection{Классификация, конфигурация B}
+
+На рисунке \ref{fig:app5-plot-cls-b} представлены все основные графики, полученные в результате обучения нейронной сети в режиме классификации в конфигурации B.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_b_acc.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_b_acc_negative.png} \\
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_b_acc_positive.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_cls_b_loss.png}
+    \caption{Точность предсказания на тестовой выборке (слева сверху), точность предсказания всех операций кроме выбранной (справа сверху), точность предсказания выбранной операции (слева снизу) и функция потерь на обучении (справа снизу) для операций cutExtrusion (фиолетовый), fillet (зелёный), chamfer (оранжевый), конфигурация B}
+    \label{fig:app5-plot-cls-b}
+\end{figure}
+
+\subsection{Сегментация, конфигурация C}
+
+На рисунке \ref{fig:app5-plot-seg-c} представлены все основные графики, полученные в результате обучения нейронной сети в режиме сегментации в конфигурации C.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_c_acc_1.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_c_iou_1.png} \\
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_c_acc_more_90.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_c_acc_more_50.png} \\
+    \includegraphics[width=0.8\linewidth]{figures/plot_seg_c_loss.png}
+    \caption{Точность предсказания выбранной операции на тестовой выборке (слева сверху), метрика IoU для выбранной операции (справа сверху), доля моделей, предсказанных на не менее чем 90\% (слева посередине), доля моделей, предсказанных на не менее чем 50\% (справа посередине) и функция потерь на обучении (посередине снизу) для операций cutExtrusion (фиолетовый), fillet (зелёный), chamfer (оранжевый), bossExtrusion (красный) конфигурация C}
+    \label{fig:app5-plot-seg-c}
+\end{figure}
+
+\subsection{Сегментация, конфигурация D}
+
+На рисунке \ref{fig:app5-plot-seg-d} представлены все основные графики, полученные в результате обучения нейронной сети в режиме сегментации в конфигурации D.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_d_acc_1.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_d_iou_1.png} \\
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_d_acc_more_90.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_d_acc_more_50.png} \\
+    \includegraphics[width=0.8\linewidth]{figures/plot_seg_d_loss.png}
+    \caption{Точность предсказания выбранной операции на тестовой выборке (слева сверху), метрика IoU для выбранной операции (справа сверху), доля моделей, предсказанных на не менее чем 90\% (слева посередине), доля моделей, предсказанных на не менее чем 50\% (справа посередине) и функция потерь на обучении (посередине снизу) для операций cutExtrusion (фиолетовый), fillet (зелёный), chamfer (оранжевый), bossExtrusion (красный) конфигурация D}
+    \label{fig:app5-plot-seg-d}
+\end{figure}
+
+\subsection{Сегментация, конфигурация E}
+
+На рисунке \ref{fig:app5-plot-seg-e} представлены все основные графики, полученные в результате обучения нейронной сети в режиме сегментации в конфигурации E.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_e_acc_1.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_e_iou_1.png} \\
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_e_acc_more_90.png}
+    \includegraphics[width=0.4\linewidth]{figures/plot_seg_e_acc_more_50.png} \\
+    \includegraphics[width=0.8\linewidth]{figures/plot_seg_e_loss.png}
+    \caption{Точность предсказания выбранной операции на тестовой выборке (слева сверху), метрика IoU для выбранной операции (справа сверху), доля моделей, предсказанных на не менее чем 90\% (слева посередине), доля моделей, предсказанных на не менее чем 50\% (справа посередине) и функция потерь на обучении (посередине снизу) для операций cutExtrusion (фиолетовый), fillet (зелёный), chamfer (оранжевый), bossExtrusion (красный) конфигурация E}
+    \label{fig:app5-plot-seg-e}
 \end{figure}
 

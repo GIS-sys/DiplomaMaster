@@ -58,33 +58,38 @@ appendices/3:
  scheme_general.png
  scheme_mode_auto.png
  scheme_mode_manual.png
+appendices/5:
+ plot_cls_a_acc.png
+ plot_cls_a_acc_negative.png
+ plot_cls_a_acc_positive.png
+ plot_cls_a_loss.png
+ plot_cls_b_acc.png
+ plot_cls_b_acc_negative.png
+ plot_cls_b_acc_positive.png
+ plot_cls_b_loss.png
+ plot_seg_c_acc_1.png
+ plot_seg_c_acc_more_50.png
+ plot_seg_c_acc_more_90.png
+ plot_seg_c_iou_1.png
+ plot_seg_c_loss.png
+ plot_seg_d_acc_1.png
+ plot_seg_d_acc_more_50.png
+ plot_seg_d_acc_more_90.png
+ plot_seg_d_iou_1.png
+ plot_seg_d_loss.png
+ plot_seg_e_acc_1.png
+ plot_seg_e_acc_more_50.png
+ plot_seg_e_acc_more_90.png
+ plot_seg_e_iou_1.png
+ plot_seg_e_loss.png
+ plot_cls_a_acc_positive.png
+ plot_cls_a_acc_negative.png
+ plot_cls_b_acc_positive.png
+ plot_cls_b_acc_negative.png
 
 image2.png
 image3.png
 image.png
-plot_cls_a_acc.png
-plot_cls_a_acc_negative.png
-plot_cls_a_acc_positive.png
-plot_cls_a_loss.png
-plot_cls_b_acc_negative.png
-plot_cls_b_acc_positive.png
-plot_seg_c_acc_1.png
-plot_seg_c_acc_more_50.png
-plot_seg_c_acc_more_90.png
-plot_seg_c_iou_1.png
-plot_seg_c_loss.png
-plot_seg_d_acc_more_50.png
-plot_seg_d_acc_more_90.png
-plot_seg_d_iou_1.png
-plot_seg_e_acc_1.png
-plot_seg_e_acc_more_50.png
-plot_seg_e_acc_more_90.png
-plot_seg_e_iou_1.png
-plot_seg_e_loss.png
-plot_cls_a_acc_positive.png
-plot_cls_a_acc_negative.png
-plot_cls_b_acc_positive.png
-plot_cls_b_acc_negative.png
 ```
 
 ## Tables location

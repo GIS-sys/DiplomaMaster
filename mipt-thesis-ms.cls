@@ -114,18 +114,24 @@
     \@afterheading
 }
 
-\newcommand{\chapternoindexcenter}[1]{
+\newcommand{\chapterappendix}[2]{
     \clearpage
     \typeout{\@chapapp\space\thechapter.}
-    \addcontentsline{toc}{chapter}{#1}
+    \addcontentsline{toc}{chapter}{#1 #2}
 
-    \chaptermark{#1}
+    \chaptermark{#1 #2}
     \addtocontents{lof}{\protect\addvspace{10\p@}}
     \addtocontents{lot}{\protect\addvspace{10\p@}}
 
-    \@makechapterheadnoindexcenter{#1}
+    \@makechapterheadnoindexcenter{#1 #2}
     \thispagestyle{miptthesis}
     \@afterheading
+
+    % Правильная нумерация таблиц и картинок с нуля
+    \setcounter{table}{0}
+    \setcounter{figure}{0}
+    \renewcommand{\thetable}{#2.\arabic{table}}
+    \renewcommand{\thefigure}{#2.\arabic{figure}}
 }
 
 \def\@makechapterhead#1{%

@@ -40,6 +40,8 @@ impl/experiments:
  plot_cls_b_loss.png
  plot_seg_d_acc_1.png
  plot_seg_d_loss.png
+impl/measurements:
+ test_model.png
 appendices/3:
  scheme_general.png
  scheme_mode_auto.png
@@ -72,10 +74,6 @@ appendices/5:
  plot_cls_a_acc_negative.png
  plot_cls_b_acc_positive.png
  plot_cls_b_acc_negative.png
-
-image2.png
-image3.png
-image.png
 ```
 
 ## Tables location
@@ -98,11 +96,18 @@ impl/architecture_evolution:
 impl/data_pipeline:
  \caption{Статистика подготовки данных}
  \label{tab:data-stats}
-imple/experiments:
+impl/experiments:
  \caption{Сравнение конфигураций классификатора (accuracy на тесте: общая, для положительного класса, для отрицательного класса)}
  \label{tab:cls-comparison}
  \caption{Сравнение конфигураций сегментатора (метрики на тестовой выборке)}
  \label{tab:seg-comparison}
+impl/measurements:
+ \caption{Замер времени обучения нейронных сетей}
+ \label{tab:time-train}
+ \caption{Замер времени инференса (Linux, python)}
+ \label{tab:time-inference-linux}
+ \caption{Замер времени инференса (Windows, exe)}
+ \label{tab:time-inference-windows}
 ```
 
 

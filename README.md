@@ -10,8 +10,6 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ## 0. My
 
-### 0.1 Complete all TODOs in diploma, all META should be set to DONE
-
 ### 0.8 Analyze all citations, maybe replace some with better ones, remove unused, make sure the links are valid and they link to a related content, on trusted website. Maybe add additional citations all over the text. Maybe add "quotes" too
 
 ### 0.11 Make it more human-like, not ai-like. Make it more formal. Decrease amount of latex-style sugar (textit, textbf, texttt). Clear from residues of deepseek-like naswers (chinese, prompts, "thank you for your question" etc.). Change quotation marks to regular ones «», check there are no – and —

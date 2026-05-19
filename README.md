@@ -77,18 +77,35 @@ cluster: /home/giswarm/tmp/dip_convert_to_png/1_3_01.04 _ Стопорное к�
 
 ## Images locations
 ```
+analysis/param_model:
+ part_op_example_bossextrusion_original
+ part_op_example_bossextrusion_detected
+ part_op_example_chamfer_original
+ part_op_example_chamfer_detected
+ part_op_example_cutextrusion_original
+ part_op_example_cutextrusion_detected
+ part_op_example_fillet_original
+ part_op_example_fillet_detected
 analysis/neural_3d:
  meshcnn_arch.png
 impl/architecture_evolution:
  naive_pointcloud_architecture.png
  naive_modular_architecture.png
 impl/inference_postprocess:
+ part_post_example_cluster_detected
+ part_post_example_remove_detected
+ part_post_example_original
  inference_pipeline.png
 impl/experiments:
  plot_cls_b_acc.png
  plot_cls_b_loss.png
  plot_seg_d_acc_1.png
  plot_seg_d_loss.png
+ part_error_example_squarecut_detected
+ part_error_example_squarecut_original
+ part_error_example_needrotate
+ part_error_example_cutfindsfillet_detected
+ part_error_example_cutfindsfillet_original
 impl/measurements:
  test_model.png
 appendices/3:
@@ -169,27 +186,11 @@ impl/measurements:
  \label{tab:time-inference-windows}
 ```
 
-part_op_example_bossextrusion_original
-part_op_example_bossextrusion_detected
-part_op_example_chamfer_original
-part_op_example_chamfer_detected
-part_op_example_cutextrusion_original
-part_op_example_cutextrusion_detected
-part_op_example_fillet_original
-part_op_example_fillet_detected
-part_post_example_cluster_detected
-part_post_example_remove_detected
-part_post_example_original
-part_error_example_squarecut_detected
-part_error_example_squarecut_original
-part_error_example_needrotate
-part_error_example_cutfindsfillet_detected
-part_error_example_cutfindsfillet_original
 
 
 
 
-TODO
+# TODO
 
 
 Приложил:

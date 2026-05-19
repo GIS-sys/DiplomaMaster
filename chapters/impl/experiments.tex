@@ -1,4 +1,4 @@
-% META: TODO.1
+% META: DONE.1
 
 \section{Экспериментальная проверка и анализ результатов}
 
@@ -139,47 +139,35 @@
 
 
 
-TODO ALL BELOW
-\subsection{Тестирование на реальных деталях}
-Модуль был протестирован на пяти типовых деталях из Приложения Г. Во всех случаях удалось выделить геометрию, соответствующую заданной операции, с визуально приемлемой точностью. Пример работы для детали «Деталь 01» показан на рисунке \ref{fig:part-01}.
-
-\begin{figure}[h]
-    \centering
-    % TODO: Вставить скриншоты из Приложения Б (исходная модель, обнаруженная часть, оставшаяся часть)
-    \includegraphics[width=0.3\linewidth]{figures/part_01_original.png}
-    \includegraphics[width=0.3\linewidth]{figures/part_01_fillet_detected.png}
-    \includegraphics[width=0.3\linewidth]{figures/part_01_fillet_remaining.png} \\
-    \includegraphics[width=0.3\linewidth]{figures/part_01_cutextrusion_detected.png}
-    \includegraphics[width=0.3\linewidth]{figures/part_01_cutextrusion_remaining.png}
-    \includegraphics[width=0.3\linewidth]{figures/part_01_chamfer_detected.png} \\
-    \includegraphics[width=0.3\linewidth]{figures/part_01_chamfer_remaining.png}
-    \includegraphics[width=0.3\linewidth]{figures/part_01_bossextrusion_detected.png}
-    \includegraphics[width=0.3\linewidth]{figures/part_01_bossextrusion_remaining.png}
-    \caption{Пример работы модуля на детали «Деталь 01»: исходная модель, обнаруженная часть (fillet), оставшаяся геометрия}
-    \label{fig:part-01}
-\end{figure}
-
-Интеграция с КОМПАС-3D позволила успешно упростить модели в автоматическом режиме для 8 из 10 тестовых случаев. Неудачи были связаны с чрезмерно сложной геометрией (более 2000 треугольников) либо с наличием операций, не включённых в обучение (например, вращение).
-
-
-
-
-
 \subsection{Анализ типовых ошибок}
-Визуальный анализ результатов сегментации (примеры на рисунке ~\ref{fig:seg-errors}) выявил следующие характерные ошибки:
-
-\begin{figure}[h]
-    \centering
-    % TODO: Вставить примеры ошибок из отчёта (отверстия как скругления, ложноположительные рёбра)
-    \includegraphics[width=0.45\linewidth]{TODO_error_hole_as_fillet.png}
-    \includegraphics[width=0.45\linewidth]{TODO_error_false_positive.png}
-    \caption{Типовые ошибки: отверстие, классифицированное как скругление (слева); ложноположительные рёбра на плоской грани (справа)}
-    \label{fig:seg-errors}
-\end{figure}
+Модуль был протестирован на датасете из реальных деталей, из которых были выбраны 5 наиболее показательных и представлены в Приложении Г. Во всех случаях удалось выделить геометрию, соответствующую заданной операции, с визуально приемлемой точностью. Визуальный анализ результатов сегментации выявил следующие характерные ошибки:
 
 \begin{itemize}
-    \item \textbf{Отверстия, ошибочно принимаемые за скругления}: геометрические признаки цилиндрических поверхностей и скруглений частично пересекаются, особенно при низком разрешении сетки.
-    \item \textbf{Ложноположительные рёбра на плоских гранях}: возникают из-за шумов триангуляции или несовершенства разметки.
-    \item \textbf{Пропуск мелких операций}: скругления малого радиуса или фаски на сложных поверхностях часто не обнаруживаются, особенно в случае \texttt{fillet}, где даже лучшая модель (E) ошибается примерно в 16\% случаев (accuracy $\ge 90\%$).
+    \item \textbf{Скругления, ошибочно принимаемые за отверстия}: геометрические признаки цилиндрических поверхностей и скруглений частично пересекаются, особенно при низком разрешении сетки (пример на рисунке \ref{fig:error-example-cutfindsfillet}).
+    \item \textbf{Ложноположительные рёбра на плоских гранях}: возникают из-за шумов триангуляции или несовершенства разметки (пример на рисунке \ref{fig:error-example-squarecut}).
+    \item \textbf{Невозможность распознавания при текущем наборе операций}: некоторые модели невозможно образовать из выбранных в текущем подходе четырёх операций, поэтому требуется расширение набора операций (пример на рисунке \ref{fig:error-example-needrotate}).
 \end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\linewidth]{figures/part_error_example_cutfindsfillet_original.png}
+    \includegraphics[width=0.45\linewidth]{figures/part_error_example_cutfindsfillet_detected.png}
+    \caption{Типовые ошибки: скругления, ошибочно принимаемые за отверстия (слева - исходная модель, справа - найденный cutExtrusion)}
+    \label{fig:error-example-cutfindsfillet}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\linewidth]{figures/part_error_example_squarecut_original.png}
+    \includegraphics[width=0.45\linewidth]{figures/part_error_example_squarecut_detected.png}
+    \caption{Типовые ошибки: ложноположительные рёбра на плоских гранях (слева - исходная модель, справа - найденный cutExtrusion)}
+    \label{fig:error-example-squarecut}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\linewidth]{figures/part_error_example_needrotate.png}
+    \caption{Типовые ошибки: невозможность распознавания при текущем наборе операций (слева - исходная модель, справа - найденный cutExtrusion)}
+    \label{fig:error-example-needrotate}
+\end{figure}
 

@@ -26,6 +26,55 @@ train for compass (on subdiv, on regu, on regu for curve and straights)
 
 ### 0.27 Add images (maybe in analysis) for examples of chamfer / fillet / cut / boss
 
+### 0.28 Add appendix 4 images of simplification
+
+### 0.29 Note the tool I used to make png from stl in some form
+
+
+
+# Helpful locations
+
+## Models
+
+1) Sample models
+
+/home/giswarm/tmp/dip_convert_to_png/1_3_01.03 _ Стопорный элемент
+/home/giswarm/tmp/dip_convert_to_png/1_3_201459 - Болт корпуса газогенератора
+/home/giswarm/tmp/dip_convert_to_png/1_3_208.1502.03.103 - Ниппель Ду15
+/home/giswarm/tmp/dip_convert_to_png/1_3_245202.00.002_Лабиринтное уплотнение
+4_0_rez_570(1)_6 (148)
+
+2) Separate operation examples
+
+cut: /home/giswarm/tmp/dip_convert_to_png/1_3_020009049 Автошина 31570R22.5 КАМА
+chamfer: /home/giswarm/tmp/dip_convert_to_png/1_3_4ЭФО.033.021 - Шпилька
+boss: /home/giswarm/tmp/dip_convert_to_png/4_0_rez_570(1)_2__ (10)
+fillet: 1_3_А8282.205.03 _ Седло
+
+3) Problem showcase
+
+/home/giswarm/tmp/dip_convert_to_png/1_3_245202.40.011_Вал
+example why we need more operations
+
+/home/giswarm/tmp/dip_convert_to_png/1_3_42-110280 - Футорка газогенератора
+not circular cut
+
+/home/giswarm/tmp/dip_convert_to_png/1_3_962.10.01.00.000 штуцер  G2
+fillet detects chamfer
+
+4) Post showcase
+
+remove: /home/giswarm/tmp/dip_convert_to_png/1_3_01.03 _ Стопорный элемент
+cluster: /home/giswarm/tmp/dip_convert_to_png/1_3_01.04 _ Стопорное кольцо
+
+5) Unsorted
+
+1_3_А8282.205.03 _ Седло - good fillet
+1_3_А8282.201.02 _ Шляпка - some simple circle cut, but kinda bad
+1_3_А8282.46.14 _ Крепление РВД - great complex cuts
+1_3_А8282.42.11 _ Втулка малая - great chamfer
+4_0_rez_570(1)_7 (123) - attempt at boss
+
 ## Images locations
 ```
 analysis/neural_3d:
@@ -44,8 +93,18 @@ impl/measurements:
  test_model.png
 appendices/3:
  scheme_general.png
- scheme_mode_auto.png
+scheme_mode_auto.png
  scheme_mode_manual.png
+appendices/4:
+    part_01_original.png
+    part_01_fillet_detected.png
+    part_01_fillet_remaining.png
+    part_01_cutextrusion_detected.png
+    part_01_cutextrusion_remaining.png
+    part_01_chamfer_detected.png
+    part_01_chamfer_remaining.png
+    part_01_bossextrusion_detected.png
+    part_01_bossextrusion_remaining.png
 appendices/5:
  plot_cls_a_acc.png
  plot_cls_a_acc_negative.png
@@ -109,6 +168,24 @@ impl/measurements:
  \caption{Замер времени инференса (Windows, exe)}
  \label{tab:time-inference-windows}
 ```
+
+part_op_example_bossextrusion_original
+part_op_example_bossextrusion_detected
+part_op_example_chamfer_original
+part_op_example_chamfer_detected
+part_op_example_cutextrusion_original
+part_op_example_cutextrusion_detected
+part_op_example_fillet_original
+part_op_example_fillet_detected
+part_post_example_cluster_detected
+part_post_example_remove_detected
+part_post_example_original
+part_error_example_squarecut_detected
+part_error_example_squarecut_original
+part_error_example_needrotate
+part_error_example_cutfindsfillet_detected
+part_error_example_cutfindsfillet_original
+
 
 
 

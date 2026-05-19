@@ -1,4 +1,4 @@
-% META: TODO.1
+% META: DONE.1
 
 \chapterappendix{ПРИЛОЖЕНИЕ}{Г}
 
@@ -11,9 +11,9 @@
 \subsection{Деталь 01}
 
 \begin{itemize}
-    \item \textbf{Операции исходного построения:} TODO.
-    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - TODO, сегментация - TODO.
-    \item \textbf{Результат классификации:} fillet - TODO\%, cutExtrusion - TODO\%, chamfer - TODO\%, bossExtrusion - TODO\%.
+    \item \textbf{Операции исходного построения:} bossExtrusion, fillet, chamfer.
+    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - B, сегментация - E.
+    \item \textbf{Результат классификации:} fillet - 0.999\%, cutExtrusion - 0.255\%, chamfer - 0.736\%.
 \end{itemize}
 
 Результаты сегментации представлены на рисунке \ref{fig:part-01}.
@@ -36,9 +36,9 @@
 \subsection{Деталь 02}
 
 \begin{itemize}
-    \item \textbf{Операции исходного построения:} TODO.
-    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - TODO, сегментация - TODO.
-    \item \textbf{Результат классификации:} fillet - TODO\%, cutExtrusion - TODO\%, chamfer - TODO\%, bossExtrusion - TODO\%.
+    \item \textbf{Операции исходного построения:} bossExtrusion, bossExtrusion, cutRotated, chamfer, cutRotated, cutExtrusion.
+    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - B, сегментация - E.
+    \item \textbf{Результат классификации:} fillet - 0.999\%, cutExtrusion - 0.159\%, chamfer - 0.911\%.
 \end{itemize}
 
 Результаты сегментации представлены на рисунке \ref{fig:part-02}.
@@ -61,9 +61,9 @@
 \subsection{Деталь 03}
 
 \begin{itemize}
-    \item \textbf{Операции исходного построения:} TODO.
-    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - TODO, сегментация - TODO.
-    \item \textbf{Результат классификации:} fillet - TODO\%, cutExtrusion - TODO\%, chamfer - TODO\%, bossExtrusion - TODO\%.
+    \item \textbf{Операции исходного построения:} bossRotated, chamfer.
+    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - B, сегментация - E.
+    \item \textbf{Результат классификации:} fillet - 0.852\%, cutExtrusion - 0.497\%, chamfer - 0.935\%.
 \end{itemize}
 
 Результаты сегментации представлены на рисунке \ref{fig:part-03}.
@@ -86,9 +86,9 @@
 \subsection{Деталь 04}
 
 \begin{itemize}
-    \item \textbf{Операции исходного построения:} TODO.
-    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - TODO, сегментация - TODO.
-    \item \textbf{Результат классификации:} fillet - TODO\%, cutExtrusion - TODO\%, chamfer - TODO\%, bossExtrusion - TODO\%.
+    \item \textbf{Операции исходного построения:} bossRotated, fillet, fillet, chamfer, chamfer, chamfer, cutExtrusion, cutExtrusion, cutExtrusion, cutExtrusion, cutExtrusion, cutExtrusion, chamfer, chamfer, fillet.
+    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - B, сегментация - C.
+    \item \textbf{Результат классификации:} fillet - 0.985\%, cutExtrusion - 0.546\%, chamfer - 0.978\%.
 \end{itemize}
 
 Результаты сегментации представлены на рисунке \ref{fig:part-04}.
@@ -111,9 +111,9 @@
 \subsection{Деталь 05}
 
 \begin{itemize}
-    \item \textbf{Операции исходного построения:} TODO.
-    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - TODO, сегментация - TODO.
-    \item \textbf{Результат классификации:} fillet - TODO\%, cutExtrusion - TODO\%, chamfer - TODO\%, bossExtrusion - TODO\%.
+    \item \textbf{Операции исходного построения:} bossExtrusion, fillet, chamfer, bossExtrusion, fillet, bossExtrusion.
+    \item \textbf{Использованные конфигурации нейронных сетей:} классификация - B, сегментация - C.
+    \item \textbf{Результат классификации:} fillet - 0.979\%, cutExtrusion - 0.355\%, chamfer - 0.444\%.
 \end{itemize}
 
 Результаты сегментации представлены на рисунке \ref{fig:part-05}.
@@ -132,8 +132,4 @@
     \caption{Пример работы модуля на детали «Деталь 05», слева направо, сверху вниз: 1) исходная модель, 2) обнаруженная часть (fillet), 3) оставшаяся геометрия (fillet), 4) обнаруженная часть (cutExtrusion), 5) оставшаяся геометрия (cutExtrusion), 6) обнаруженная часть (chamfer), 7) оставшаяся геометрия (chamfer), 8) обнаруженная часть (bossExtrusion), 9) оставшаяся геометрия (bossExtrusion)}
     \label{fig:part-05}
 \end{figure}
-
-
-
-Упрощение - TODO
 

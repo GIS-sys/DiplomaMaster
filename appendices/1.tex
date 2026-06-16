@@ -189,7 +189,7 @@ for ($i = 0; $i -lt $tasks.Count -and $i -lt $operations.Count; $i++) {
     foreach ($useCache in $cacheFlags) {
       foreach ($useSubdiv in $subdivFlags) {
         $cacheArg = if ($useCache) { '--allow_cache' } else { '' }
-        $subdivArg = if ($useSubiv) { '-d' } else { '' }
+        $subdivArg = if ($useSubdiv) { '-d' } else { '' }
         $configName = "task=$task, op=$operation, cache=$useCache, useSubdiv=$useSubdiv"
         Write-Host "`nRunning: $configName" -ForegroundColor Yellow
         $times = 1..10 | ForEach-Object {

@@ -8,7 +8,7 @@
 
 \subsection{Код для поиска статистики по операциям в датасете}
 
-\begin{verbatim}
+\begin{lstlisting}
 import json
 import os
 from collections import defaultdict, Counter
@@ -77,13 +77,13 @@ def compute_statistics():
 
 if __name__ == "__main__":
     compute_statistics()
-\end{verbatim}
+\end{lstlisting}
 
 
 
 \subsection{Код для поиска статистики по очищенной выборке}
 
-\begin{verbatim}
+\begin{lstlisting}
 import os
 from pathlib import Path
 
@@ -129,11 +129,11 @@ print(f"Папок с разным числом STL и STEP:           {len(erro
 print(f"Папок без STL:                              {len(errors_nostl)}")
 print(f"Папок с числом STL < {min_stl}:                     {len(errors_stlfew)}")
 print(f"Корректных папок (пригодных для обработки): {len(valid_folders)}")
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Код для замера скорости работы на Linux}
 
-\begin{verbatim}
+\begin{lstlisting}
 tasks=("classification" "classification" "segmentation" "segmentation" "segmentation")
 operations=("dip_a_cls_chamfer" "dip_b_cls_chamfer" "dip_c_seg_chamfer" "dip_d_seg_chamfer" "dip_e_seg_chamfer")
 runs=10
@@ -173,11 +173,11 @@ for ((i=0; i<${#tasks[@]} && i<${#operations[@]}; i++)); do
         done
     done
 done
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Код для замера скорости работы на Windows}
 
-\begin{verbatim}
+\begin{lstlisting}
 $tasks = @('classification', 'classification', 'segmentation', 'segmentation', 'segmentation')
 $operations = @('a', 'b', 'c', 'd', 'e')
 $cacheFlags = @($false, $true)
@@ -203,5 +203,5 @@ for ($i = 0; $i -lt $tasks.Count -and $i -lt $operations.Count; $i++) {
       }
     }
 }
-\end{verbatim}
+\end{lstlisting}
 

@@ -17,14 +17,14 @@ DATASET_ROOT = "~/data/"
 TYPE = 1
 
 def get_operations_from_json(json_path):
-    """Извлекает список типов операций из JSON-файла истории."""
+    """Extracts a list of operation types from a JSON file of file history"""
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     operations = data.get("entities", [])
     return [op.get("feature") for op in operations.values() if "feature" in op]
 
 def get_operations_from_steps(steps_path):
-    """Извлекает список типов операций из STEPS-файла истории."""
+    """Extracts a list of operation types from STEPS file of file history"""
     with open(steps_path, 'r', encoding='utf-8') as f:
         data = f.read()
     operations = data.split("Feature = ")
@@ -38,7 +38,7 @@ def compute_statistics():
     
     for root, dirs, files in os.walk(DATASET_ROOT + ("old/" if TYPE == 0 else "new/")):
         if TYPE == 0:
-            # Ищем JSON-файл в каждой папке модели
+            # Find JSON file in each folder
             json_files = [f for f in files if f.endswith(".json")]
             if not json_files:
                 continue
@@ -46,7 +46,7 @@ def compute_statistics():
             try:
                 ops = get_operations_from_json(json_path)
             except Exception as e:
-                print(f"Ошибка в {json_path}: {e}")
+                print(f"Error in {json_path}: {e}")
                 continue
         else:
             steps_files = [f for f in files if f.endswith("Steps.txt")]
@@ -56,19 +56,19 @@ def compute_statistics():
             try:
                 ops = get_operations_from_steps(steps_path)
             except Exception as e:
-                print(f"Ошибка в {steps_path}: {e}")
+                print(f"Error in {steps_path}: {e}")
                 continue
         
         total_models += 1
-        # Для каждого интересующего типа считаем
+        # For each operation type count occurences
         for op_type in set(ops):
             count = ops.count(op_type)
             if count > 0:
                 model_counts[op_type] += 1
                 op_occurrences[op_type].append(count)
     
-    print(f"Всего моделей после фильтрации: {total_models}\n")
-    print("Операция, Моделей, Доля, Операций на модель")
+    print(f"Total models after filtration: {total_models}\n")
+    print("Operation, Models, Fraction, Operations per model")
     for op in op_occurrences.keys():
         cnt_models = model_counts[op]
         fraction = cnt_models / total_models * 100
@@ -91,12 +91,12 @@ root = Path("~/data/")
 min_stl = 2
 
 all_folders = []
-errors_multiplejson = []   # папки с >1 JSON
-errors_nojson = []         # папки без JSON
-errors_diffstlstp = []     # кол-во STL != кол-во STEP
-errors_nostl = []          # нет STL файлов
-errors_stlfew = []         # STL меньше min_stl
-valid_folders = []         # папки, прошедшие все проверки
+errors_multiplejson = []   # folders with >1 JSON
+errors_nojson = []         # folders without json
+errors_diffstlstp = []     # amount of STL != amount of STEP
+errors_nostl = []          # no STL files
+errors_stlfew = []         # less STL files than min_stl
+valid_folders = []         # folders which passed all checks
 
 for current_dir, subdirs, files in os.walk(root):
     if subdirs:
@@ -121,14 +121,14 @@ for current_dir, subdirs, files in os.walk(root):
     else:
         valid_folders.append(current_dir)
 
-print("=== СТАТИСТИКА ПО ДАТАСЕТУ ===")
-print(f"Всего папок:                               {len(all_folders)}")
-print(f"Папок с несколькими JSON:                   {len(errors_multiplejson)}")
-print(f"Папок без JSON:                             {len(errors_nojson)}")
-print(f"Папок с разным числом STL и STEP:           {len(errors_diffstlstp)}")
-print(f"Папок без STL:                              {len(errors_nostl)}")
-print(f"Папок с числом STL < {min_stl}:                     {len(errors_stlfew)}")
-print(f"Корректных папок (пригодных для обработки): {len(valid_folders)}")
+print("=== DATASET STATISTICS ===")
+print(f"Total folders:                      {len(all_folders)}")
+print(f"  several json:                     {len(errors_multiplejson)}")
+print(f"  no json:                          {len(errors_nojson)}")
+print(f"  different amount of STL and STEP: {len(errors_diffstlstp)}")
+print(f"  no STL:                           {len(errors_nostl)}")
+print(f"  STL amount less than {min_stl}:   {len(errors_stlfew)}")
+print(f"Correct:                            {len(valid_folders)}")
 \end{lstlisting}
 
 \subsection{Код для замера скорости работы на Linux}
